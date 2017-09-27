@@ -3,6 +3,7 @@
   * **[Cloning a GitHub repository](#Cloning-a-GitHub-repository)**
   * **[Color on REPL or terminal output from python color](#Color-on-REPL/Terminal)**
   * **[Get time of python script execution](Get-time-of-python-script-execution)**
+  * **[Upgrade pip installed packages](Upgrade-all-pip-installed-packages)**
   * **[]()**
 
 ###  Cloning a GitHub repository
