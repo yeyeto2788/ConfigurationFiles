@@ -2,7 +2,7 @@ reportlab==3.4.0
 qrcode==5.3
 Pillow==4.2.1
 requests==2.18.4
-BeautifulSoup==3.2.1
+beautifulsoup4==4.6.0
 esptool==2.0.1
 giphypop==0.3
 psutil==5.2.2
