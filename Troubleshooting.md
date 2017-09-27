@@ -14,9 +14,11 @@ fatal: unable to access 'https://github.com/<user>/<repository>.git/': server ce
 ```
 
 * **SOLUTION 1**
+
   `sudo update-ca-certificates`
 
 * **SOLUTION 2**
+
   If previous solution didn't work follow the steps below
   * Configure your time zone:
     `sudo dpkg-reconfigure tzdata`
@@ -45,7 +47,9 @@ This is to set the color on the output of the code. Take into account that for B
 For more [info](https://en.wikipedia.org/wiki/ANSI_escape_code)
 
 * **SOLUTION 1**
+
   Declare the variables and then use them on the code:
+  
   **Variables:**
 
   ```python
@@ -56,11 +60,13 @@ For more [info](https://en.wikipedia.org/wiki/ANSI_escape_code)
   "Red": "\x1b[01;05;37;41m"}
   ```
   **How to use it on the code:**
+  
   Just need to add the color plus the text you want to print.
   ```
   print (Blue + "Text to print..")
   ```
 * **SOLUTION 2**
+
   Declare the variables/class and then use them on the code:
   ```python
   class bcolors:
@@ -75,6 +81,7 @@ For more [info](https://en.wikipedia.org/wiki/ANSI_escape_code)
   ```
 
   **How to use it on the code:**
+  
   Just need to add the color plus the text you want to print.
   ```
   print (bcolors.WARNING + "Warning text to print..")
@@ -85,6 +92,7 @@ For more [info](https://en.wikipedia.org/wiki/ANSI_escape_code)
 In order to get the time of execution of a python script you should use the following:
 
 * **SOLUTION 1**
+
   If you now that the program would be executed within minutes this will give you the seconds
 
   ```python
@@ -95,11 +103,27 @@ In order to get the time of execution of a python script you should use the foll
   ```
 
 * **SOLUTION 2**
+
   If you want to have minutes and so on this will also help you:
+  
   ```python
   from time import gmtime, strftime
   StartTime = strftime("%Y-%m-%d %H:%M:%S", gmtime())
   main()
   EndTime = strftime("%Y-%m-%d %H:%M:%S", gmtime())
   print(StartTime + ">>>" + EndTime)
+  ```
+  
+  ### Upgrade all pip installed packages
+  
+  * **SOLUTION 1**
+  
+  In order to have all packages updated first we need to collect all packages on a `.txt` file by:
+  ```
+  pip list installed > requirements.txt
+  ```
+  
+  then let's update them by:
+  ```
+  pip install -r requirements.txt --upgrade
   ```
