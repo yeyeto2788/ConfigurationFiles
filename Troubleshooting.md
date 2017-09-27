@@ -115,7 +115,7 @@ In order to get the time of execution of a python script you should use the foll
   print(StartTime + ">>>" + EndTime)
   ```
   
-  ### Upgrade all pip installed packages
+### Upgrade all pip installed packages
   
   * **SOLUTION 1**
   
@@ -128,3 +128,7 @@ In order to get the time of execution of a python script you should use the foll
   ```
   pip install -r requirements.txt --upgrade
   ```
+
+### Title
+  
+  * **SOLUTION 1**
