@@ -4,6 +4,7 @@
   * **[Color on REPL or terminal output from python color](#Color-on-REPL/Terminal)**
   * **[Get time of python script execution](Get-time-of-python-script-execution)**
   * **[Upgrade pip installed packages](Upgrade-all-pip-installed-packages)**
+  * **[Clone all repositories from a User](Clone-all-repositories-from-a-User)**
   * **[]()**
 
 ###  Cloning a GitHub repository
@@ -129,6 +130,14 @@ In order to get the time of execution of a python script you should use the foll
   pip install -r requirements.txt --upgrade
   ```
 
+### Clone all repositories from a User
+  
+  * **SOLUTION 1**
+  ```
+  USER=<GitHubUser>; curl "https://api.github.com/users/$USER/repos?per_page=1000" | grep -w clone_url | grep -o '[^"]\+://.\+.git' | xargs -L1 git clone
+  ```
+  
 ### Title
   
   * **SOLUTION 1**
+
