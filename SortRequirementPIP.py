@@ -17,7 +17,7 @@ def printError(pstrRawData):
         pstrRawData: String that would be display on the terminal
 
     Returns:
-        Nothing
+        Nothing.
     """
     if sys.platform == "win32":
         RED = ""
