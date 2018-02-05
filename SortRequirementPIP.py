@@ -60,7 +60,7 @@ def orderPIPFile(pstrFileName):
 
 
 def main():
-    usage = "Usage: %prog [options] <arguments>"
+    usage = "Usage: %prog [-i] filename"
     parser = OptionParser(usage, version="%prog 0.1")
     parser.add_option("-i", "--input",
                       action="store",
