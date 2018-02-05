@@ -1,6 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+import sys
+from optparse import OptionParser
+
 """
 EXECUTE THE CODE
 """
@@ -18,11 +21,12 @@ def orderPIPFile(pstrFileName):
         for i in range(0, len(SortedData)):
             g.write(SortedData[i] + "\n")
     g.close
+    print("The file {} was correctly sorted.".format(pstrFileName))
 
 
 
 def main():
-    usage = "usage: %prog [options] <arguments>"
+    usage = "Usage: %prog [options] <arguments>"
     parser = OptionParser(usage, version="%prog 0.1")
     parser.add_option("-i", "--input",
                       action="store",
@@ -45,10 +49,6 @@ def main():
         if options.filename:
             print("\nSorting the {} file.\n".format(options.filename))
             orderPIPFile(options.filename)
-            if repoDir == "":
-                exit()
-            else:
-                print("ERROR!!!")
         else:
             printError("You have to specify the input file name.")
 
