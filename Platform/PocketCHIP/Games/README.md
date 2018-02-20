@@ -1,6 +1,12 @@
+# Emulating games on the PockeCHIP
 
+
+## Install mednafen emulator:
 
 `sudo apt-get install mednafen libsdl2-dev`
+
+
+## Further setting:
 
 Within the PocketCHIP run the emulator so it creates the config file for further editing
 
@@ -37,8 +43,18 @@ Change the following lines on the file:
 
 To run any game just type: `mednafen -fs 1 /path/to/rom`
 
-If you desire to have a "GUI" create a `.sh` file with the content of `medGUI.sh` file that is it within this repository folder. 
+## Creating a "GUI" for the emulator.
 
-After this give the file execution permissions by typing `chmod +x medGui.sh`
+If you desire to have a "GUI" create a `.sh` file with the content of `medGUI.sh` file that is it within this repository folder.
 
-**NOTE:** Take into account that in the file `medGUI.sh` there is a route pointing to `/home/chip/roms` folder, if you have the roms in other location, go and edit the file so it is pointing to the right directory.
+Install needed packages:
+
+`sudo apt-get install zenity`
+
+After this, give execution permissions to the file by typing `chmod +x medGui.sh`
+
+**NOTES:** 
+  
+  * Take into account that in the file `medGUI.sh` there is a route pointing to `/home/chip/roms` folder, if you have the roms in other location, go and edit the file so it is pointing to the right directory.
+  
+  * You can place this file in the Desktop so you'll have a quick access to it.
