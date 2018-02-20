@@ -28,7 +28,7 @@ fatal: unable to access 'https://github.com/<user>/<repository>.git/': server ce
   * Install `ntp`
     `sudo apt-get install -y ntp`
   * Check if ntp is working by:
-    `ntpq -P` or `sudo ntpq -P` it should show something like this:
+    `ntpq -p` or `sudo ntpq -p` it should show something like this:
     ```
       remote           refid      st t when poll reach   delay   offset  jitter
       ==============================================================================
