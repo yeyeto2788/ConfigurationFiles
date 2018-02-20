@@ -58,3 +58,5 @@ After this, give execution permissions to the file by typing `chmod +x medGui.sh
   * Take into account that in the file `medGUI.sh` there is a route pointing to `/home/chip/roms` folder, if you have the roms in other location, go and edit the file so it is pointing to the right directory.
   
   * You can place this file in the Desktop so you'll have a quick access to it.
+  
+  * `alt+shift+1` should show a window to configure the controller.
