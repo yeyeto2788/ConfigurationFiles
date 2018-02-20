@@ -41,6 +41,10 @@ fatal: unable to access 'https://github.com/<user>/<repository>.git/': server ce
     If this doesn't show anything or you get something like `No association ID's returned` then type `dpkg-reconfigure ntp` or `sudo dpkg-reconfigure ntp`
   * Add current time to system by:
     `date -s "22 AUG 2017 13:10:00"`
+ 
+* **SOLUTION 3**
+  
+  `sudo apt-get install ssl-cert`
 
 ###  Color on REPL/Terminal:
 
