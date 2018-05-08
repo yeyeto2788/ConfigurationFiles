@@ -1,3 +1,5 @@
+# FlatCAM related information to process PCBs
+
 
 ## How to process some basic files:
 ### Processing the top/bottom layer.
@@ -31,7 +33,7 @@ write_gcode pcb_cuts_cnc cuts.gcode
 ```
 
 
-# Steps on the process the board cutout
+### Steps on the process the PCB cutout
 
 **1. Import Geometry**
 
@@ -61,7 +63,10 @@ These are the options for the `-gaps` parameter `(8|4|tb|lr|2tb|2lr)>]`
 
 
 
-# TODO:
+## `defaults.json` file.
+In this file there is a configuration that can be imported into the FlatCAM software. (**I haven't test this yet!**)
+
+## TODO:
 
 * Offset for the boards.
 ```
