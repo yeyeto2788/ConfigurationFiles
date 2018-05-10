@@ -6,8 +6,8 @@
 ```
 python FlatCAM.py --shellfile=/path/to/file
 open_gerber mygerber.gbr -outname pcb
-isolate pcb -tooldia 0.04 -passes 3 -overlap 0.05 -combine 1 -outname pcb_iso
-cncjob pcb_iso -z_cut -0.1 -z_move 1.0 -feedrate 128.0 -tooldia 0.2 -outname pcb_iso_cnc
+isolate pcb -tooldia 0.1 -passes 3 -overlap 0.05 -combine 1 -outname pcb_iso
+cncjob pcb_iso -z_cut -0.1 -z_move 1.0 -feedrate 128.0 -tooldia 0.1 -outname pcb_iso_cnc
 write_gcode pcb_iso_cnc pcb.gcode
 export_gcode pcb.gcode
 ```
@@ -16,7 +16,7 @@ export_gcode pcb.gcode
 ```
 python FlatCAM.py --shellfile=/path/to/file
 open_excellon drill.drl -outname drl
-drillcncjob drl -drillz -1.6 -travelz 0.5 -feedrate 16.0 -spindlespeed 1000 -outname drl_cnc
+drillcncjob drl -drillz -1.6 -travelz 1.5 -feedrate 60.0 -spindlespeed 1000 -outname drl_cnc
 write_gcode drl_cnc drl.gcode
 ```
 
@@ -24,11 +24,11 @@ write_gcode drl_cnc drl.gcode
 ```
 python FlatCAM.py --shellfile=/path/to/file
 open_gerber cutgerber.gbr -outname cuts
-isolate cuts -dia 1.0 -passes 1 -overlap 0.0 -combine 1 -outname cuts_iso
+isolate cuts -dia 2.0 -passes 1 -overlap 0.0 -combine 1 -outname cuts_iso
 ext cuts_iso -outname cuts_iso_exterior
 delete cuts_iso
-geocutout cuts_iso_exterior -dia 2.0 -gapsize 1.0 -gaps 4 
-cncjob cuts_iso_exterior -z_cut -1.6 -z_move 0.5 -feedrate 16.0 -tooldia 1.0 -spindlespeed 1000 -multidepth true -depthperpass 1.6 -outname pcb_cuts_cnc
+geocutout cuts_iso_exterior -dia 2.0 -gapsize 0.5 -gaps lr 
+cncjob cuts_iso_exterior -z_cut -1.6 -z_move 1.5 -feedrate 45.0 -tooldia 2.0 -spindlespeed 1000 -multidepth true -depthperpass 0.8 -outname pcb_cuts_cnc
 write_gcode pcb_cuts_cnc cuts.gcode
 ```
 
@@ -45,7 +45,7 @@ Command: `open_gerber cutgerber.gbr -outname cuts`
 
 Generate Geometry (Having selected the board cutout gerber), this will generate the file `cuts_iso`
 
-Command: `isolate cuts -dia 1.0 -passes 1 -overlap 0.0 -combine 1 -outname cuts_iso`
+Command: `isolate cuts -dia 2.0 -passes 1 -overlap 0.0 -combine 1 -outname cuts_iso`
 
 **3. Generate the exterior geometry**
 
@@ -57,7 +57,7 @@ Command: `ext cuts_iso -outname cuts_iso_exterior`
 
 It is needed to create the 
 
-Command: `geocutout cuts_iso_exterior -dia 2.0 -gapsize 1.0 -gaps 4`
+Command: `geocutout cuts_iso_exterior -dia 2.0 -gapsize 0.5 -gaps lr`
 
 These are the options for the `-gaps` parameter `(8|4|tb|lr|2tb|2lr)>]`
 
