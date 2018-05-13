@@ -7,7 +7,7 @@
 python FlatCAM.py --shellfile=/path/to/file
 open_gerber mygerber.gbr -outname pcb
 isolate pcb -tooldia 0.1 -passes 3 -overlap 0.05 -combine 1 -outname pcb_iso
-cncjob pcb_iso -z_cut -0.1 -z_move 1.0 -feedrate 128.0 -tooldia 0.1 -outname pcb_iso_cnc
+cncjob pcb_iso -z_cut -0.1 -z_move 1.0 -feedrate 90.0 -tooldia 0.1 -outname pcb_iso_cnc
 write_gcode pcb_iso_cnc pcb.gcode
 export_gcode pcb.gcode
 ```
@@ -28,7 +28,7 @@ isolate cuts -dia 2.0 -passes 1 -overlap 0.0 -combine 1 -outname cuts_iso
 ext cuts_iso -outname cuts_iso_exterior
 delete cuts_iso
 geocutout cuts_iso_exterior -dia 2.0 -gapsize 0.5 -gaps lr 
-cncjob cuts_iso_exterior -z_cut -1.6 -z_move 1.5 -feedrate 45.0 -tooldia 2.0 -spindlespeed 1000 -multidepth true -depthperpass 0.8 -outname pcb_cuts_cnc
+cncjob cuts_iso_exterior -z_cut -1.6 -z_move 1.5 -feedrate 60.0 -tooldia 2.0 -spindlespeed 1000 -multidepth true -depthperpass 0.8 -outname pcb_cuts_cnc
 write_gcode pcb_cuts_cnc cuts.gcode
 ```
 
