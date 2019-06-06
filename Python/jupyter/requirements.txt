@@ -1,0 +1,6 @@
+ipywidgets>=7.4.2
+jupyter>=1.0.0
+jupyter-contrib-nbextensions>=0.5.1
+jupyterthemes>=0.20.0
+rise>=5.5.0
+qgrid>=1.1.1
