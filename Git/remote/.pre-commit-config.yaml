@@ -1,0 +1,33 @@
+repos:
+-   repo: https://github.com/ambv/black
+    rev: stable
+    hooks:
+    - id: black
+      args: ['--safe']
+      language_version: python3.6
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v1.2.3
+    hooks:
+    - id: flake8
+      language_version: python3.6
+      args: [
+              '--ignore=E203,E266,E501,W503,F403,F401'
+      ]
+      # E203 "whitespace before ':'"
+      # E266 "Too many leading '#' for block comment"
+      # E501 "Line too long (82 > 79 characters)"
+      # W503 "line break before operator"
+      # F403 "'from module import *' used"
+      # F401 "Module imported but unused"
+-   repo: https://github.com/chewse/pre-commit-mirrors-pydocstyle
+    rev: 32d551988fbefd1e8d250df5dcafa20aec0f53e2
+    # 4.0.1
+    hooks:
+    - id: pydocstyle
+      language_version: python3.6
+      args: [
+              '--select=D1',
+        ]
+      # Check for docstring presence only.
+      # Don't require docstrings for tests.
+      #'--match=(?!test).*\.py'
