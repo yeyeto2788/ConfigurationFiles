@@ -7,7 +7,7 @@ giphypop==0.3
 guizero==0.5.0
 imutils==0.4.3
 keyboard==0.11.0
-markdown2==2.3.5
+markdown2==2.4.0
 MarkupSafe==1.0
 mouse==0.7.0
 numpy==1.13.1
