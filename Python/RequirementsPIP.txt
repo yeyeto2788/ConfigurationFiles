@@ -24,7 +24,7 @@ PyMySQL==0.8.0
 pypiwin32==220
 pyserial==3.4
 qrcode==5.3
-reportlab==3.4.0
+reportlab==3.5.55
 requests==2.20.0
 selenium==3.7.0
 telepot==12.0
